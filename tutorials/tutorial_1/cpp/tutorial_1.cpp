@@ -51,6 +51,7 @@ static void SetExePath()
 #endif
 
 FirstAgent* g_FirstAgent = NULL;
+SecondAgent* g_SecondAgent = NULL;
 
 bool InitBehavic()
 {
@@ -73,6 +74,11 @@ bool InitPlayer()
 
 	g_FirstAgent->btsetcurrent("FirstBT");
 
+	//-----------
+	g_SecondAgent = behaviac::Agent::Create<SecondAgent>();
+	bRet = g_SecondAgent->btload("SecondBT");
+	g_SecondAgent->btsetcurrent("SecondBT");
+
     return bRet;
 }
 
@@ -80,14 +86,18 @@ void UpdateLoop()
 {
 	LOGI("UpdateLoop\n");
 
-	int frames = 0;
+	behaviac::Workspace::GetInstance()->SetFrameSinceStartup(0);
+
 	behaviac::EBTStatus status = behaviac::BT_RUNNING;
 
 	while (status == behaviac::BT_RUNNING)
 	{
-		LOGI("frame %d\n", ++frames);
+		behaviac::Workspace::GetInstance()->SetFrameSinceStartup(behaviac::Workspace::GetInstance()->GetFrameSinceStartup() + 1);
+
+		LOGI("frame %d\n", behaviac::Workspace::GetInstance()->GetFrameSinceStartup());
 
 		status = g_FirstAgent->btexec();
+		status = g_SecondAgent->btexec();
 	}
 }
 
@@ -96,6 +106,7 @@ void CleanupPlayer()
 	LOGI("CleanupPlayer\n");
 
 	behaviac::Agent::Destroy(g_FirstAgent);
+	behaviac::Agent::Destroy(g_SecondAgent);
 }
 
 void CleanupBehaviac()

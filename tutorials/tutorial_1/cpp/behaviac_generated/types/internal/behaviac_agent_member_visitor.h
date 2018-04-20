@@ -11,4 +11,11 @@
 
 
 
+struct METHOD_TYPE_SecondAgent_Say { };
+template<> inline void SecondAgent::_Execute_Method_<METHOD_TYPE_SecondAgent_Say>(behaviac::string p0)
+{
+	this->SecondAgent::Say(p0);
+}
+
+
 #endif // _BEHAVIAC_MEMBER_VISITOR_H_

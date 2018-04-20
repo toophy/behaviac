@@ -9,5 +9,6 @@
 
 // THE FOLLOWING AGENT HEADER FILES IS GENERATED AUTOMATICALLY:
 #include "FirstAgent.h"
+#include "SecondAgent.h"
 
 #endif // _BEHAVIAC_AGENT_HEADERS_H_

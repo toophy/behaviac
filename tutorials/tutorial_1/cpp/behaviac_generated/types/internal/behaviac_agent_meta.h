@@ -17,5 +17,7 @@ namespace behaviac
 	inline void FunctionPointer_behaviac_Agent_LogMessage(char* param0) { behaviac::Agent::LogMessage(param0); }
 	inline void FunctionPointer_FirstAgent_LogMessage(char* param0) { FirstAgent::LogMessage(param0); }
 	inline void FunctionPointer_FirstAgent_SayHello(Agent* self) { ((FirstAgent*)self)->SayHello(); }
+	inline void FunctionPointer_SecondAgent_LogMessage(char* param0) { SecondAgent::LogMessage(param0); }
+	inline void FunctionPointer_SecondAgent_Say(Agent* self, behaviac::string msg) { ((SecondAgent*)self)->_Execute_Method_<METHOD_TYPE_SecondAgent_Say, void, behaviac::string >(msg); }
 }
 #endif // _BEHAVIAC_AGENT_PROPERTIES_H_

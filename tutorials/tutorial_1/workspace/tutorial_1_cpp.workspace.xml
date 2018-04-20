@@ -5,6 +5,9 @@
       <isexported>False</isexported>
       <exportfilecount>1</exportfilecount>
       <folder>../../cpp</folder>
+      <includedfilenames>
+        <includedfilename>utils/util.h</includedfilename>
+      </includedfilenames>
     </cpp>
   </export>
 </workspace>
