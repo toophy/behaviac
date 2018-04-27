@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="DebugStatic|Win32">
@@ -103,9 +103,10 @@
       <SmallerTypeCheck>true</SmallerTypeCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-    <ExceptionHandling>false</ExceptionHandling>
+      <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ProgramDataBaseFileName>$(OutDir)tutorial_1_debugstatic_win32_vs2013.pdb</ProgramDataBaseFileName>
@@ -133,11 +134,13 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-    <ExceptionHandling>false</ExceptionHandling>
+      <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <DebugInformationFormat></DebugInformationFormat>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;NDEBUG;_HAS_EXCEPTIONS=0;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -158,16 +161,17 @@
     <ClCompile>
       <AdditionalOptions>/MP /bigobj %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\inc;..\..\inc;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\inc;..\include;%(AdditionalIncludeDirectories);..\..\tutorials\tutorial_1\cpp\behaviac_generated\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <SmallerTypeCheck>true</SmallerTypeCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-    <ExceptionHandling>false</ExceptionHandling>
+      <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ProgramDataBaseFileName>$(OutDir)tutorial_1_debugdll_win32_vs2013.pdb</ProgramDataBaseFileName>
@@ -195,11 +199,13 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-    <ExceptionHandling>false</ExceptionHandling>
+      <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <DebugInformationFormat></DebugInformationFormat>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;NDEBUG;_HAS_EXCEPTIONS=0;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -223,8 +229,12 @@
     <ClInclude Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\behaviac_agent_meta.h" />
     <ClInclude Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\behaviac_headers.h" />
     <ClInclude Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\FirstAgent.h" />
+    <ClInclude Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\SecondAgent.h" />
+    <ClInclude Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\utils\util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\SecondAgent.cpp" />
+    <ClCompile Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\utils\util.cpp" />
     <ClCompile Include="..\..\tutorials\tutorial_1\cpp\tutorial_1.cpp">
     </ClCompile>
     <ClCompile Include="..\..\tutorials\tutorial_1\cpp\behaviac_generated\types\internal\behaviac_agent_meta.cpp">
