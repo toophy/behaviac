@@ -11,10 +11,28 @@
 
 
 
+struct PROPERTY_TYPE_SecondAgent_m_Targets { };
+template<> inline behaviac::vector<behaviac::string>& SecondAgent::_Get_Property_<PROPERTY_TYPE_SecondAgent_m_Targets>()
+{
+	return this->m_Targets;
+}
+
+struct METHOD_TYPE_SecondAgent_RandomTarget { };
+template<> inline behaviac::string SecondAgent::_Execute_Method_<METHOD_TYPE_SecondAgent_RandomTarget>()
+{
+	return this->SecondAgent::RandomTarget();
+}
+
 struct METHOD_TYPE_SecondAgent_Say { };
 template<> inline void SecondAgent::_Execute_Method_<METHOD_TYPE_SecondAgent_Say>(behaviac::string p0)
 {
 	this->SecondAgent::Say(p0);
+}
+
+struct METHOD_TYPE_SecondAgent_SayTo { };
+template<> inline void SecondAgent::_Execute_Method_<METHOD_TYPE_SecondAgent_SayTo>(behaviac::string p0, behaviac::string p1)
+{
+	this->SecondAgent::SayTo(p0, p1);
 }
 
 

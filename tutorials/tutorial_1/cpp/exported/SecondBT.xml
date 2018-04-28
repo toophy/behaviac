@@ -2,21 +2,27 @@
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
 <!--Source File: SecondBT.xml-->
 <behavior name="SecondBT" agenttype="SecondAgent" version="5">
-  <node class="Sequence" id="1">
-    <node class="Action" id="0">
-      <property Method="Self.SecondAgent::Say(&quot;大家好&quot;)" />
-      <property ResultOption="BT_SUCCESS" />
-    </node>
-    <node class="Action" id="2">
-      <property Method="Self.SecondAgent::Say(&quot;我是Tom猫&quot;)" />
-      <property ResultOption="BT_SUCCESS" />
-    </node>
-    <node class="WaitFrames" id="4">
-      <property Frames="const int 10" />
-    </node>
-    <node class="Action" id="3">
-      <property Method="Self.SecondAgent::Say(&quot;我的叫声值得你关注&quot;)" />
-      <property ResultOption="BT_SUCCESS" />
+  <node class="DecoratorLoop" id="2">
+    <property Count="const int 5" />
+    <property DecorateWhenChildEnds="true" />
+    <property DoneWithinFrame="false" />
+    <node class="SelectorStochastic" id="3">
+      <node class="DecoratorCountLimit" id="11">
+        <property Count="const int 5" />
+        <property DecorateWhenChildEnds="true" />
+        <node class="ReferencedBehavior" id="12">
+          <property ReferenceBehavior="const string &quot;SayToRandBT&quot;" />
+          <property Task="Self.SecondAgent::event_say_to(&quot;&quot;,&quot;你好2&quot;)" />
+        </node>
+      </node>
+      <node class="DecoratorCountLimit" id="10">
+        <property Count="const int 20" />
+        <property DecorateWhenChildEnds="true" />
+        <node class="ReferencedBehavior" id="7">
+          <property ReferenceBehavior="const string &quot;SayToRandBT&quot;" />
+          <property Task="Self.SecondAgent::event_say_to(&quot;&quot;,&quot;你好&quot;)" />
+        </node>
+      </node>
     </node>
   </node>
 </behavior>

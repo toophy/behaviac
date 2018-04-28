@@ -23,7 +23,13 @@ public:
 
 	BEHAVIAC_DECLARE_AGENTTYPE(SecondAgent, behaviac::Agent)
 
+	private: behaviac::vector<behaviac::string> m_Targets;
+
+	private: behaviac::string RandomTarget();
+
 	private: void Say(behaviac::string msg);
+
+	private: void SayTo(behaviac::string name, behaviac::string msg);
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 

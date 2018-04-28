@@ -7,6 +7,7 @@
 
 #include "behaviac_agent_headers.h"
 #include "behaviac_agent_member_visitor.h"
+#include "behaviac_customized_types.h"
 
 namespace behaviac
 {
@@ -17,7 +18,24 @@ namespace behaviac
 	inline void FunctionPointer_behaviac_Agent_LogMessage(char* param0) { behaviac::Agent::LogMessage(param0); }
 	inline void FunctionPointer_FirstAgent_LogMessage(char* param0) { FirstAgent::LogMessage(param0); }
 	inline void FunctionPointer_FirstAgent_SayHello(Agent* self) { ((FirstAgent*)self)->SayHello(); }
+
+	inline void Set_SecondAgent_m_Targets(Agent* self, behaviac::vector<behaviac::string> value) { ((SecondAgent*)self)->_Get_Property_<PROPERTY_TYPE_SecondAgent_m_Targets, behaviac::vector<behaviac::string> >() = value; };
+	inline const void* Get_SecondAgent_m_Targets(Agent* self) { return &((SecondAgent*)self)->_Get_Property_<PROPERTY_TYPE_SecondAgent_m_Targets, behaviac::vector<behaviac::string> >(); };
+
+	inline void Set_SecondAgent_m_Targets(Agent* self, behaviac::string value, int index) { ((SecondAgent*)self)->_Get_Property_<PROPERTY_TYPE_SecondAgent_m_Targets, behaviac::vector<behaviac::string> >()[index] = value; };
+	inline const void* Get_SecondAgent_m_Targets(Agent* self, int index) { return &((SecondAgent*)self)->_Get_Property_<PROPERTY_TYPE_SecondAgent_m_Targets, behaviac::vector<behaviac::string> >()[index]; };
+
+	inline void FunctionPointer_SecondAgent_event_say_to(Agent* self, behaviac::string name, behaviac::string msg) { } /* event_say_to */
+	inline void FunctionPointer_SecondAgent_event_test_int_bool(Agent* self, int val_int, bool val_bool) { } /* event_test_int_bool */
 	inline void FunctionPointer_SecondAgent_LogMessage(char* param0) { SecondAgent::LogMessage(param0); }
+	inline behaviac::string FunctionPointer_SecondAgent_RandomTarget(Agent* self) { return (behaviac::string)((SecondAgent*)self)->_Execute_Method_<METHOD_TYPE_SecondAgent_RandomTarget, behaviac::string >(); }
 	inline void FunctionPointer_SecondAgent_Say(Agent* self, behaviac::string msg) { ((SecondAgent*)self)->_Execute_Method_<METHOD_TYPE_SecondAgent_Say, void, behaviac::string >(msg); }
+	inline void FunctionPointer_SecondAgent_SayTo(Agent* self, behaviac::string name, behaviac::string msg) { ((SecondAgent*)self)->_Execute_Method_<METHOD_TYPE_SecondAgent_SayTo, void, behaviac::string, behaviac::string >(name, msg); }
+	inline void Set_MsgItem_m_Name(Agent* self, behaviac::string value) { ((MsgItem*)self)->m_Name = value; };
+	inline const void* Get_MsgItem_m_Name(Agent* self) { return &((MsgItem*)self)->m_Name; };
+
+	inline void Set_MsgItem_m_Msg(Agent* self, behaviac::string value) { ((MsgItem*)self)->m_Msg = value; };
+	inline const void* Get_MsgItem_m_Msg(Agent* self) { return &((MsgItem*)self)->m_Msg; };
+
 }
 #endif // _BEHAVIAC_AGENT_PROPERTIES_H_

@@ -12,6 +12,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "behaviac_generated/types/behaviac_types.h"
+#include <ctime>
 
 #if BEHAVIAC_CCDEFINE_ANDROID
 #include <android/log.h>
@@ -96,7 +97,8 @@ void UpdateLoop()
 
 		LOGI("frame %d\n", behaviac::Workspace::GetInstance()->GetFrameSinceStartup());
 
-		status = g_FirstAgent->btexec();
+		//status = g_FirstAgent->btexec();
+		printf("frame : %d\n", behaviac::Workspace::GetInstance()->GetFrameSinceStartup());
 		status = g_SecondAgent->btexec();
 	}
 }
@@ -119,6 +121,10 @@ void CleanupBehaviac()
 #if !BEHAVIAC_CCDEFINE_ANDROID
 int main(int argc, char** argv)
 {
+	time_t tick;
+	tick = time(NULL);
+	srand(tick);
+
 	BEHAVIAC_UNUSED_VAR(argc);
 	BEHAVIAC_UNUSED_VAR(argv);
 

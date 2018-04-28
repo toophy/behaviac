@@ -12,8 +12,12 @@
 
 SecondAgent::SecondAgent()
 {
+	m_Targets.push_back("");
 ///<<< BEGIN WRITING YOUR CODE CONSTRUCTOR
-
+	m_Targets.push_back("小明");
+	m_Targets.push_back("小红");
+	m_Targets.push_back("小军");
+	m_Targets.push_back("小五郎");
 ///<<< END WRITING YOUR CODE
 }
 
@@ -24,10 +28,28 @@ SecondAgent::~SecondAgent()
 ///<<< END WRITING YOUR CODE
 }
 
+behaviac::string SecondAgent::RandomTarget()
+{
+///<<< BEGIN WRITING YOUR CODE RandomTarget
+	if (m_Targets.size() == 0)
+		return "";
+
+	int x = Rand_int(int(0), int(m_Targets.size())-1);
+	return m_Targets.at(x);
+///<<< END WRITING YOUR CODE
+}
+
 void SecondAgent::Say(behaviac::string msg)
 {
 ///<<< BEGIN WRITING YOUR CODE Say
 	std::cout << UTF8ToGBK(msg).c_str() << std::endl;
+///<<< END WRITING YOUR CODE
+}
+
+void SecondAgent::SayTo(behaviac::string name, behaviac::string msg)
+{
+///<<< BEGIN WRITING YOUR CODE SayTo
+	std::cout << "我对" << name << "说 : " << UTF8ToGBK(msg).c_str() << std::endl;
 ///<<< END WRITING YOUR CODE
 }
 

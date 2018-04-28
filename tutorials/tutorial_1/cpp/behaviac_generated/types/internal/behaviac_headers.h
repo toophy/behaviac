@@ -10,5 +10,6 @@
 // YOU SHOULD SET THE HEADER FILES OF YOUR GAME WHEN EXPORTING CPP FILES ON THE BEHAVIAC EDITOR:
 #include "../../../utils/util.h"
 
+#include "behaviac_customized_types.h"
 
 #endif // _BEHAVIAC_HEADERS_H_

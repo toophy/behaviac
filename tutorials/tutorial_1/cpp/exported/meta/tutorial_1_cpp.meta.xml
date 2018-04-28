@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="10627304" />
+<agents version="1" signature="2100514731">
+  <agent type="SecondAgent" base="behaviac::Agent" signature="2527210339">
+    <properties>
+      <property name="m_Targets" type="vector&lt;string&gt;" member="false" static="false" defaultvalue="0:" />
+    </properties>
+  </agent>
+</agents>

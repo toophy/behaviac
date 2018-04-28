@@ -36,3 +36,44 @@ std::string UTF8ToGBK(const std::string& strUTF8)
 	delete[]wszGBK;
 	return strTemp;
 }
+
+
+int Rand_int(int nMin, int nMax)
+{
+
+	if (nMin == nMax)
+	{
+		return nMin;
+	}
+
+	if (nMax < nMin)
+	{
+		int nTemp = nMin;
+		nMin = nMax;
+		nMax = nTemp;
+	}
+
+	static double g_fRandMax1 = 1.0 / (double)(((int64_t)RAND_MAX) + 1LL);
+
+	return (nMin + int(((double)rand()*g_fRandMax1)*(nMax - nMin + 1)));
+}
+
+int Rand_int_mirror(int nMin, int nMax)
+{
+	int nVal = Rand_int(nMin, nMax);
+	if (nMin >= 0 && nMax >= 0)
+	{
+		if (Rand_int(1, 100) <= 50)
+		{
+			return 0 - nVal;
+		}
+	}
+	else if (nMin<0 && nMax<0)
+	{
+		if (Rand_int(1, 100) <= 50)
+		{
+			return 0 - nVal;
+		}
+	}
+	return nVal;
+}

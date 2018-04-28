@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <meta>
-  <types />
+  <types>
+    <struct Type="MsgItem" Namespace="" Base="" IsRefType="true" IsCustomized="true" DisplayName="MsgItem" Desc="私聊消息">
+      <Member Name="m_Name" DisplayName="m_Name" Desc="m_Name" Type="string" TypeFullName="System.String" Class="MsgItem" Public="true" />
+      <Member Name="m_Msg" DisplayName="m_Msg" Desc="m_Msg" Type="string" TypeFullName="System.String" Class="MsgItem" Public="true" />
+    </struct>
+  </types>
   <agents>
     <agent classfullname="behaviac::Agent" DisplayName="behaviac::Agent" Desc="behaviac::Agent" IsRefType="true" IsImplemented="true">
       <Method Name="VectorLength" DisplayName="VectorLength" Desc="VectorLength" Class="behaviac::Agent" ReturnType="int" ReturnTypeFullName="System.Int32" Static="true" Public="true" istask="false">
@@ -29,7 +34,21 @@
       <Method Name="SayHello" DisplayName="SayHello" Desc="SayHello" Class="FirstAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
     </agent>
     <agent classfullname="SecondAgent" base="behaviac::Agent" DisplayName="SecondAgent" Desc="SecondAgent" IsRefType="true" IsCustomized="true">
+      <Member Name="m_Targets" DisplayName="m_Targets" Desc="m_Targets" Class="SecondAgent" Type="vector&lt;string&gt;" TypeFullName="System.Collections.Generic.List`1[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" defaultvalue="0:" Static="false" Public="false" Readonly="false" />
       <Method Name="Say" DisplayName="Say" Desc="Say" Class="SecondAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="false" istask="false">
+        <Param Name="msg" Type="string" TypeFullName="System.String" DisplayName="msg" Desc="msg" />
+      </Method>
+      <Method Name="SayTo" DisplayName="SayTo" Desc="SayTo" Class="SecondAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="false" istask="false">
+        <Param Name="name" Type="string" TypeFullName="System.String" DisplayName="name" Desc="name" />
+        <Param Name="msg" Type="string" TypeFullName="System.String" DisplayName="msg" Desc="msg" />
+      </Method>
+      <Method Name="RandomTarget" DisplayName="RandomTarget" Desc="随机目标" Class="SecondAgent" ReturnType="string" ReturnTypeFullName="System.String" Static="false" Public="false" istask="false" />
+      <Method Name="event_test_int_bool" DisplayName="event_test_int_bool" Desc="event_test_int_bool" Class="SecondAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="false" istask="true">
+        <Param Name="val_int" Type="int" TypeFullName="System.Int32" DisplayName="val_int" Desc="val_int" />
+        <Param Name="val_bool" Type="bool" TypeFullName="System.Boolean" DisplayName="val_bool" Desc="val_bool" />
+      </Method>
+      <Method Name="event_say_to" DisplayName="event_say_to" Desc="event_say_to" Class="SecondAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="false" istask="true">
+        <Param Name="name" Type="string" TypeFullName="System.String" DisplayName="name" Desc="name" />
         <Param Name="msg" Type="string" TypeFullName="System.String" DisplayName="msg" Desc="msg" />
       </Method>
     </agent>

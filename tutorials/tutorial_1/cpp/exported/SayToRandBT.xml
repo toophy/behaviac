@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: SayToRandBT.xml-->
+<behavior name="SayToRandBT" agenttype="SecondAgent" version="5">
+  <pars>
+    <par name="_$local_task_param_$_0" type="string" value="" />
+    <par name="_$local_task_param_$_1" type="string" value="" />
+  </pars>
+  <node class="Task" id="4">
+    <property Prototype="Self.SecondAgent::event_say_to(&quot;&quot;,&quot;&quot;)" />
+    <property IsHTN="false" />
+    <node class="Sequence" id="0">
+      <node class="Assignment" id="1">
+        <property CastRight="false" />
+        <property Opl="string Self.SecondAgent::_$local_task_param_$_0" />
+        <property Opr="Self.SecondAgent::RandomTarget()" />
+      </node>
+      <node class="Action" id="3">
+        <property Method="Self.SecondAgent::SayTo(string Self.SecondAgent::_$local_task_param_$_0,string Self.SecondAgent::_$local_task_param_$_1)" />
+        <property ResultOption="BT_SUCCESS" />
+      </node>
+    </node>
+  </node>
+</behavior>
